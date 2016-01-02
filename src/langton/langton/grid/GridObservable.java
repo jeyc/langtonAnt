@@ -1,5 +1,7 @@
 package langton.langton.grid;
 
+import langton.langton.grid.events.GridListener;
+
 /**
  * Grille de Langton observable.
  */

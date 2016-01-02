@@ -1,6 +1,9 @@
 package langton.langton.grid;
 
 import langton.langton.exceptions.LangtonNegativeSequenceNumberException;
+import langton.langton.grid.events.GridClearedEvent;
+import langton.langton.grid.events.GridListener;
+import langton.langton.grid.events.GridSequenceNumberChangedEvent;
 
 import java.util.HashSet;
 
@@ -57,8 +60,10 @@ public class GridObservableDecorateur implements GridObservable {
         int oldSequenceNumber = getSequenceNumberAt(x, y);
         grid.setSequenceNumberAt(x, y, sequenceNumber);
 
+        GridSequenceNumberChangedEvent event = new GridSequenceNumberChangedEvent(this, x, y, oldSequenceNumber, sequenceNumber);
+
         onSequenceNumberChangedListeners.forEach(
-                gridListener -> gridListener.handleGridEvent(GridEvent.SEQUENCE_NUMBER_CHANGED, this, new Position(x, y), oldSequenceNumber, sequenceNumber)
+                gridListener -> gridListener.handleEvent(event)
         );
     }
 
@@ -74,7 +79,7 @@ public class GridObservableDecorateur implements GridObservable {
         grid.clearAll();
 
         onGridClearedListeners.forEach(
-                gridListener -> gridListener.handleGridEvent(GridEvent.CLEARED, this, null, 0, 0)
+                gridListener -> gridListener.handleEvent(new GridClearedEvent(this))
         );
     }
 }
