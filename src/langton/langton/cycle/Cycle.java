@@ -36,15 +36,21 @@ public class Cycle implements CycleInterface {
         validateSequenceNumber(currentSequenceNumber);
 
         int next = currentSequenceNumber + 1;
-        if (next == rotations.size())
+        if (next > rotations.size())
             next = 0;
+
         return next;
+
+
+
     }
 
     @Override
     public Rotation getNextRotation(int currentSequenceNumber) throws LangtonCycleInvalidSequenceNumberException, LangtonNegativeSequenceNumberException {
         validateSequenceNumber(currentSequenceNumber);
 
+        if (currentSequenceNumber == rotations.size())
+            return finalRotation;
         return rotations.get(currentSequenceNumber);
     }
 
@@ -52,7 +58,7 @@ public class Cycle implements CycleInterface {
         if (sequenceNumber < 0)
             throw new LangtonNegativeSequenceNumberException();
 
-        if (sequenceNumber >= rotations.size())
+        if (sequenceNumber > rotations.size())
             throw new LangtonCycleInvalidSequenceNumberException();
     }
 
