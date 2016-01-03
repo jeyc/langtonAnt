@@ -12,6 +12,6 @@ public interface GridListener extends EventListener{
      *
      * @param event Evénement déclenché
      */
-    void handleEvent(GridEvent event);
+    void handleEvent(final GridEvent event);
 
 }

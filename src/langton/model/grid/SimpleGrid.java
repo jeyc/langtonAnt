@@ -9,7 +9,7 @@ import java.util.HashMap;
  */
 public class SimpleGrid implements Grid {
 
-    private HashMap<Position, Integer> grid = new HashMap<>();
+    private final HashMap<Position, Integer> grid = new HashMap<>();
 
     @Override
     public int getSequenceNumberAt(int x, int y) {

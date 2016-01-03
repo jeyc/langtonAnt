@@ -6,12 +6,12 @@ import langton.model.grid.Grid;
  * GridSequenceNumberChangedEvent est utlisé pour notifier tous les clients intéressés que le numéro de séquence
  * d'une cellule de grille de Langton a été modifié.
  */
-public class GridSequenceNumberChangedEvent extends GridEvent {
+public final class GridSequenceNumberChangedEvent extends GridEvent {
 
-    private int x;
-    private int y;
-    private int oldValue;
-    private int newValue;
+    private final int x;
+    private final int y;
+    private final int oldValue;
+    private final int newValue;
 
     /**
      * @param source grille à l'origine de l'event

@@ -12,10 +12,10 @@ import java.util.HashSet;
  */
 public class GridObservableDecorateur implements GridObservable {
 
-    private Grid grid;
+    private final Grid grid;
 
-    private HashSet<GridListener> onSequenceNumberChangedListeners = new HashSet<>();
-    private HashSet<GridListener> onGridClearedListeners = new HashSet<>();
+    private final HashSet<GridListener> onSequenceNumberChangedListeners = new HashSet<>();
+    private final HashSet<GridListener> onGridClearedListeners = new HashSet<>();
 
     public GridObservableDecorateur(Grid grid) {
         if (grid == null)
