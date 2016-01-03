@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * Donnée d'une abscisse et d'une ordonnée.
  */
-public class Position {
+public final class Position {
 
     private final int x;
     private final int y;
