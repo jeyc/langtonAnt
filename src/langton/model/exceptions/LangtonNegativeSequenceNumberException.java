@@ -1,4 +1,4 @@
-package langton.langton.exceptions;
+package langton.model.exceptions;
 
 /**
  * Lancée lorsqu'une application tente d'utiliser un entier négatif comme numéro de séquence de Langton.

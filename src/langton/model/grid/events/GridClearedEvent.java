@@ -1,6 +1,6 @@
-package langton.langton.grid.events;
+package langton.model.grid.events;
 
-import langton.langton.grid.Grid;
+import langton.model.grid.Grid;
 
 /**
  * Event utlisé pour notifier les clients qu'une grille a été ré-initialisée.

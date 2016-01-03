@@ -1,6 +1,6 @@
-package langton.langton.grid;
+package langton.model.grid;
 
-import langton.langton.exceptions.LangtonNegativeSequenceNumberException;
+import langton.model.exceptions.LangtonNegativeSequenceNumberException;
 
 /**
  * Une grille de Langton bidimensionnelle.

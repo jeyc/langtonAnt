@@ -1,6 +1,6 @@
-package langton.langton.grid;
+package langton.model.grid;
 
-import langton.langton.grid.events.GridListener;
+import langton.model.grid.events.GridListener;
 
 /**
  * Grille de Langton observable.

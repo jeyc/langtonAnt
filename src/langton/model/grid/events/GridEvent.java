@@ -1,6 +1,6 @@
-package langton.langton.grid.events;
+package langton.model.grid.events;
 
-import langton.langton.grid.Grid;
+import langton.model.grid.Grid;
 
 import java.util.EventObject;
 

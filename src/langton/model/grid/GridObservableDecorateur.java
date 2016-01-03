@@ -1,9 +1,9 @@
-package langton.langton.grid;
+package langton.model.grid;
 
-import langton.langton.exceptions.LangtonNegativeSequenceNumberException;
-import langton.langton.grid.events.GridClearedEvent;
-import langton.langton.grid.events.GridListener;
-import langton.langton.grid.events.GridSequenceNumberChangedEvent;
+import langton.model.exceptions.LangtonNegativeSequenceNumberException;
+import langton.model.grid.events.GridClearedEvent;
+import langton.model.grid.events.GridListener;
+import langton.model.grid.events.GridSequenceNumberChangedEvent;
 
 import java.util.HashSet;
 

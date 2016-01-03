@@ -1,4 +1,4 @@
-package langton.langton.orientation;
+package langton.model.orientation;
 
 /**
  * Classe présentant une méthode statique pour calculer la direction à prendre.

@@ -1,4 +1,4 @@
-package langton.langton.orientation;
+package langton.model.orientation;
 
 /**
  * Directions autorisées pour le déplacement.

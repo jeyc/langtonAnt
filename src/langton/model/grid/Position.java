@@ -1,4 +1,4 @@
-package langton.langton.grid;
+package langton.model.grid;
 
 import java.util.Objects;
 

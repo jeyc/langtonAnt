@@ -1,10 +1,10 @@
-package langton.langton.ant;
+package langton.model.ant;
 
-import langton.langton.cycle.Cycle;
-import langton.langton.cycle.LangtonCycleInvalidSequenceNumberException;
-import langton.langton.exceptions.LangtonNegativeSequenceNumberException;
-import langton.langton.grid.Grid;
-import langton.langton.orientation.Direction;
+import langton.model.cycle.Cycle;
+import langton.model.cycle.LangtonCycleInvalidSequenceNumberException;
+import langton.model.exceptions.LangtonNegativeSequenceNumberException;
+import langton.model.grid.Grid;
+import langton.model.orientation.Direction;
 
 /**
  * Définit l'interface des fourmis de Langton.

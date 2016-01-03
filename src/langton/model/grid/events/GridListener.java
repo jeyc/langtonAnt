@@ -1,4 +1,4 @@
-package langton.langton.grid.events;
+package langton.model.grid.events;
 
 import java.util.EventListener;
 

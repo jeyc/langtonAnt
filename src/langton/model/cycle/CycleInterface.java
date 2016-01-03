@@ -1,7 +1,7 @@
-package langton.langton.cycle;
+package langton.model.cycle;
 
-import langton.langton.exceptions.LangtonNegativeSequenceNumberException;
-import langton.langton.orientation.Rotation;
+import langton.model.exceptions.LangtonNegativeSequenceNumberException;
+import langton.model.orientation.Rotation;
 
 /**
  * Interface que doivent implémenter les cycles de Langton.
