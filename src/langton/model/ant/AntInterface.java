@@ -1,6 +1,6 @@
 package langton.model.ant;
 
-import langton.model.cycle.Cycle;
+import langton.model.cycle.CycleInterface;
 import langton.model.cycle.LangtonCycleInvalidSequenceNumberException;
 import langton.model.exceptions.LangtonNegativeSequenceNumberException;
 import langton.model.grid.Grid;
@@ -78,7 +78,7 @@ public interface AntInterface {
      *
      * @return cycle comportementale de la fourmi
      */
-    Cycle getCycle();
+    CycleInterface getCycle();
 
     /**
      * Définit le cycle qui déterminera le comportement de la fourmi sur sa grille.
@@ -86,7 +86,7 @@ public interface AntInterface {
      *
      * @param cycle comportemental
      */
-    void setCycle(Cycle cycle);
+    void setCycle(CycleInterface cycle);
 
     /**
      * Fait effectuer un mouvement unitaire à la fourmi sur sa grille.
