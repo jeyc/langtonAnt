@@ -1,6 +1,6 @@
 package langton.model.ant;
 
-import langton.model.cycle.CycleInterface;
+import langton.model.cycle.Cycle;
 import langton.model.cycle.LangtonCycleInvalidSequenceNumberException;
 import langton.model.exceptions.LangtonNegativeSequenceNumberException;
 import langton.model.grid.Grid;
@@ -20,7 +20,7 @@ public class Ant implements AntInterface {
 
     private Grid grid = null;
 
-    private CycleInterface cycle = null;
+    private Cycle cycle = null;
 
     @Override
     public int getX() {
@@ -68,12 +68,12 @@ public class Ant implements AntInterface {
     }
 
     @Override
-    public CycleInterface getCycle() {
+    public Cycle getCycle() {
         return cycle;
     }
 
     @Override
-    public void setCycle(CycleInterface cycle) {
+    public void setCycle(Cycle cycle) {
         this.cycle = cycle;
     }
 

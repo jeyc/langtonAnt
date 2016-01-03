@@ -3,63 +3,30 @@ package langton.model.cycle;
 import langton.model.exceptions.LangtonNegativeSequenceNumberException;
 import langton.model.orientation.Rotation;
 
-import java.util.ArrayList;
-
 /**
- * Implémentation de <code>CycleInterface</code>.
+ * Interface que doivent implémenter les cycles de Langton.
+ * <p>
+ *      Un cycle est une séquence finie et fermée de rotations.
  */
-public class Cycle implements CycleInterface {
+public interface Cycle {
 
-    private final ArrayList<Rotation> rotations = new ArrayList<>();
-    private Rotation finalRotation = Rotation.LEFT;
+    /**
+     * Retourne la rotation à effectuer à la fin du cycle.
+     *
+     * @return la dernière rotation du cycle
+     */
+    Rotation getFinalRotation();
 
-    @Override
-    public Rotation getFinalRotation() {
-        return finalRotation;
-    }
+    /**
+     * Renvoie le numéro de séquence suivant : currentSequenceNumber + 1 dans le cas général, 0 en fin de cycle.
+     *
+     * @param currentSequenceNumber numéro de séquence de départ
+     * @return numéro de séquence d'arrivée
+     * @throws LangtonNegativeSequenceNumberException si le numéro de séquence fournit est négatif
+     * @throws LangtonCycleInvalidSequenceNumberException si le numéro de séquence fournit est supérieur au numéro de séquence maximal du cycle
+     */
+    int getNextSequenceNumber(int currentSequenceNumber) throws LangtonNegativeSequenceNumberException, LangtonCycleInvalidSequenceNumberException;
 
-    @Override
-    public void setFinalRotation(Rotation rotation) {
-        if (rotation == null)
-            throw new NullPointerException();
-        finalRotation = rotation;
-    }
-
-    public void addRotation(Rotation rotation) {
-        if (rotation == null)
-            throw new NullPointerException();
-        rotations.add(rotation);
-    }
-
-    @Override
-    public int getNextSequenceNumber(int currentSequenceNumber) throws LangtonNegativeSequenceNumberException, LangtonCycleInvalidSequenceNumberException {
-        validateSequenceNumber(currentSequenceNumber);
-
-        int next = currentSequenceNumber + 1;
-        if (next > rotations.size())
-            next = 0;
-
-        return next;
-
-
-
-    }
-
-    @Override
-    public Rotation getNextRotation(int currentSequenceNumber) throws LangtonCycleInvalidSequenceNumberException, LangtonNegativeSequenceNumberException {
-        validateSequenceNumber(currentSequenceNumber);
-
-        if (currentSequenceNumber == rotations.size())
-            return finalRotation;
-        return rotations.get(currentSequenceNumber);
-    }
-
-    private void validateSequenceNumber(int sequenceNumber) throws LangtonNegativeSequenceNumberException, LangtonCycleInvalidSequenceNumberException {
-        if (sequenceNumber < 0)
-            throw new LangtonNegativeSequenceNumberException();
-
-        if (sequenceNumber > rotations.size())
-            throw new LangtonCycleInvalidSequenceNumberException();
-    }
+    Rotation getNextRotation(int currentSequenceNumber) throws LangtonCycleInvalidSequenceNumberException, LangtonNegativeSequenceNumberException;
 
 }
