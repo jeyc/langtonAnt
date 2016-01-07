@@ -1,7 +1,7 @@
 package langton.model.cycle;
 
+import langton.model.cycle.exceptions.LangtonCycleInvalidSequenceNumberException;
 import langton.model.exceptions.LangtonNegativeSequenceNumberException;
-import langton.model.orientation.Rotation;
 
 /**
  * Interface que doivent implémenter les cycles de Langton.
@@ -11,22 +11,13 @@ import langton.model.orientation.Rotation;
 public interface Cycle {
 
     /**
-     * Retourne la rotation à effectuer à la fin du cycle.
-     *
-     * @return la dernière rotation du cycle
-     */
-    Rotation getFinalRotation();
-
-    /**
-     * Renvoie le numéro de séquence suivant : currentSequenceNumber + 1 dans le cas général, 0 en fin de cycle.
+     * Renvoie l'instruction qui suit le numéro de séquence fourni.
      *
      * @param currentSequenceNumber numéro de séquence de départ
-     * @return numéro de séquence d'arrivée
+     * @return prochaine instruction
      * @throws LangtonNegativeSequenceNumberException si le numéro de séquence fournit est négatif
      * @throws LangtonCycleInvalidSequenceNumberException si le numéro de séquence fournit est supérieur au numéro de séquence maximal du cycle
      */
-    int getNextSequenceNumber(int currentSequenceNumber) throws LangtonNegativeSequenceNumberException, LangtonCycleInvalidSequenceNumberException;
-
-    Rotation getNextRotation(int currentSequenceNumber) throws LangtonCycleInvalidSequenceNumberException, LangtonNegativeSequenceNumberException;
+    Instruction getNextInstruction(int currentSequenceNumber) throws LangtonNegativeSequenceNumberException, LangtonCycleInvalidSequenceNumberException;
 
 }

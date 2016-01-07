@@ -2,6 +2,8 @@ package langton.model.grid;
 
 import langton.model.exceptions.LangtonNegativeSequenceNumberException;
 
+import java.util.List;
+
 /**
  * Une grille de Langton bidimensionnelle.
  */
@@ -40,4 +42,6 @@ public interface Grid {
      * Ré-initialise tous les numéros de séquence de la grille à 0.
      */
     void clearAll();
+
+    List<Case> getSequenceNumbers();
 }

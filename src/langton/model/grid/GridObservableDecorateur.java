@@ -6,6 +6,7 @@ import langton.model.grid.events.GridListener;
 import langton.model.grid.events.GridSequenceNumberChangedEvent;
 
 import java.util.HashSet;
+import java.util.List;
 
 /**
  * Décorateur de <code>Grid</code> implémentant <code>GridObservable</code>.
@@ -81,5 +82,10 @@ public class GridObservableDecorateur implements GridObservable {
         onGridClearedListeners.forEach(
                 gridListener -> gridListener.handleEvent(new GridClearedEvent(this))
         );
+    }
+
+    @Override
+    public List<Case> getSequenceNumbers() {
+        return grid.getSequenceNumbers();
     }
 }

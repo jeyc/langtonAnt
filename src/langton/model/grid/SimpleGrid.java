@@ -2,7 +2,9 @@ package langton.model.grid;
 
 import langton.model.exceptions.LangtonNegativeSequenceNumberException;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Implémentation de <code>Grid</code>.
@@ -39,5 +41,13 @@ public class SimpleGrid implements Grid {
     @Override
     public void clearAll() {
         grid.clear();
+    }
+
+    @Override
+    public List<Case> getSequenceNumbers() {
+        List<Case> cases = new ArrayList<Case>();
+        grid.forEach((position, sequenceNumber) -> cases.add(new Case(position.getX(), position.getY(), sequenceNumber)));
+
+        return cases;
     }
 }
